@@ -1,4 +1,6 @@
-﻿namespace Mango.Web.Services.IServices
+﻿using Mango.Web.Models;
+
+namespace Mango.Web.Services.IServices
 {
     public interface IProductService
     {
@@ -6,8 +8,8 @@
 
         Task<T> GetProductByIdAsync<T>(int id);
 
-        Task<T> CreateProductAsync<T>();
-        Task<T> UpdateProductAsync<T>();
+        Task<T> CreateProductAsync<T>(ProductDto productDto);
+        Task<T> UpdateProductAsync<T>(ProductDto productDto);
         Task<T> DeleteProductAsync<T>(int id);
     }
 }
